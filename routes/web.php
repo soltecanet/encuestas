@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Encuestas\SurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//Route::get('/codes', [CodesController::class, 'index'])->name('codes.index');
+Route::get('/lista_encuestados', [SurveyController::class, 'index'])->name('encuestas.index');
+Route::get('/crear_persona', [SurveyController::class, 'newPerson'])->name('persona.create');
+
+
