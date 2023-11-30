@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Encuestas\SurveyController;
+use App\Http\Livewire\Proveedores\CreateSupplider;
+use App\Http\Livewire\Proveedores\EditSupplider;
+use App\Http\Livewire\Proveedores\ListSupplider;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +34,11 @@ Route::middleware([
 
 Route::get('/lista_encuestados', [SurveyController::class, 'index'])->name('encuestas.index');
 Route::get('/crear_persona', [SurveyController::class, 'newPerson'])->name('persona.create');
+
+
+Route::get('/proveedores', ListSupplider::class)->name('supplier.index');
+Route::get('/crear_proveerdor', CreateSupplider::class)->name('supplier.create');
+Route::get('/editar_proveerdor/{id}', EditSupplider::class)->name('supplier.edit');
+
 
 
